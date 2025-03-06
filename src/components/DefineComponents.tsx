@@ -1,4 +1,6 @@
+import { Link } from "react-router-dom";
 import { Button } from "./ui/Button";
+import { EComponentName } from "@/pages/DynamicComponent";
 
 const DefineComponents = () => {
   // coming from state
@@ -25,7 +27,9 @@ const DefineComponents = () => {
 
         <div className="space-y-3">
           {Array.from(technologies, (item) => (
-            <PlainCard text={item} />
+            <Link to={`/components/${EComponentName.battery}`}>
+              <PlainCard text={item} />
+            </Link>
           ))}
         </div>
       </div>

@@ -1,3 +1,5 @@
+import { Button } from "../ui/Button";
+
 const RetailTariffComponents = () => {
   return (
     <div>
@@ -12,7 +14,19 @@ const RetailTariffComponents = () => {
 
       <hr className="my-4" />
 
-      <div className=""></div>
+      <input type="file" name="" id="" />
+
+      <hr className="my-4" />
+
+      <div className="flex justify-between w-full">
+        <Button size={"sm"} type="button">
+          <span className="">Save</span>
+        </Button>
+
+        <Button size={"sm"} type="button">
+          <span className="">Save and Continue</span>
+        </Button>
+      </div>
     </div>
   );
 };
