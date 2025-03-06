@@ -1,37 +1,10 @@
 {
-  "Scenario": {
-    "": {
+  "PV": {
+    "6ae6c43d-71c0-42ea-a574-c217e6b56753": {
       "active": "yes",
       "keys": {
-        "activate_electricity_load_dump": {
-          "opt_value": "0",
-          "sensitivity": {
-            "active": "no",
-            "coupled": "None",
-            "value": "nan"
-          },
-          "type": "bool"
-        },
-        "apply_interconnection_constraints": {
-          "opt_value": "0",
-          "sensitivity": {
-            "active": "no",
-            "coupled": "None",
-            "value": "nan"
-          },
-          "type": "bool"
-        },
-        "binary": {
-          "opt_value": "0",
-          "sensitivity": {
-            "active": "no",
-            "coupled": "None",
-            "value": "nan"
-          },
-          "type": "bool"
-        },
-        "def_growth": {
-          "opt_value": "2",
+        "ccost_kW": {
+          "opt_value": "1500",
           "sensitivity": {
             "active": "no",
             "coupled": "None",
@@ -39,17 +12,8 @@
           },
           "type": "float"
         },
-        "dt": {
-          "opt_value": "1",
-          "sensitivity": {
-            "active": "no",
-            "coupled": "None",
-            "value": "nan"
-          },
-          "type": "float"
-        },
-        "end_year": {
-          "opt_value": "2044",
+        "construction_year": {
+          "opt_value": "2024",
           "sensitivity": {
             "active": "no",
             "coupled": "None",
@@ -57,116 +21,233 @@
           },
           "type": "Period"
         },
-        "incl_site_load": {
+        "curtail": {
+          "opt_value": "0",
+          "sensitivity": {
+            "active": "no",
+            "coupled": "None",
+            "value": "nan"
+          },
+          "type": "bool"
+        },
+        "decommissioning_cost": {
+          "opt_value": "0",
+          "sensitivity": {
+            "active": "no",
+            "coupled": "None",
+            "value": "nan"
+          },
+          "type": "float"
+        },
+        "ecc%": {
+          "opt_value": "0",
+          "sensitivity": {
+            "active": "no",
+            "coupled": "None",
+            "value": "nan"
+          },
+          "type": "float"
+        },
+        "expected_lifetime": {
+          "opt_value": "20",
+          "sensitivity": {
+            "active": "no",
+            "coupled": "None",
+            "value": "nan"
+          },
+          "type": "int"
+        },
+        "fixed_om_cost": {
+          "opt_value": "10",
+          "sensitivity": {
+            "active": "no",
+            "coupled": "None",
+            "value": "nan"
+          },
+          "type": "float"
+        },
+        "gamma": {
+          "opt_value": "43",
+          "sensitivity": {
+            "active": "no",
+            "coupled": "None",
+            "value": "nan"
+          },
+          "type": "float"
+        },
+        "grid_charge": {
+          "opt_value": "0",
+          "sensitivity": {
+            "active": "no",
+            "coupled": "None",
+            "value": "nan"
+          },
+          "type": "bool"
+        },
+        "grid_charge_penalty": {
+          "opt_value": "0",
+          "sensitivity": {
+            "active": "no",
+            "coupled": "None",
+            "value": "nan"
+          },
+          "type": "bool"
+        },
+        "growth": {
+          "opt_value": "0",
+          "sensitivity": {
+            "active": "no",
+            "coupled": "None",
+            "value": "nan"
+          },
+          "type": "float"
+        },
+        "inv_max": {
+          "opt_value": "10000",
+          "sensitivity": {
+            "active": "no",
+            "coupled": "None",
+            "value": "nan"
+          },
+          "type": "float"
+        },
+        "loc": {
+          "opt_value": "AC",
+          "sensitivity": {
+            "active": "no",
+            "coupled": "None",
+            "value": "nan"
+          },
+          "type": "float"
+        },
+        "macrs_term": {
+          "opt_value": "3",
+          "sensitivity": {
+            "active": "no",
+            "coupled": "None",
+            "value": "nan"
+          },
+          "type": "float"
+        },
+        "max_rated_capacity": {
+          "opt_value": "0",
+          "sensitivity": {
+            "active": "no",
+            "coupled": "None",
+            "value": "nan"
+          },
+          "type": "bool"
+        },
+        "min_rated_capacity": {
+          "opt_value": "0",
+          "sensitivity": {
+            "active": "no",
+            "coupled": "None",
+            "value": "nan"
+          },
+          "type": "bool"
+        },
+        "name": {
+          "opt_value": "CCC Solar",
+          "sensitivity": {
+            "active": "no",
+            "coupled": "None",
+            "value": "nan"
+          },
+          "type": "string"
+        },
+        "nsr_response_time": {
+          "opt_value": "0",
+          "sensitivity": {
+            "active": "no",
+            "coupled": "None",
+            "value": "nan"
+          },
+          "type": "int"
+        },
+        "nu": {
+          "opt_value": "20",
+          "sensitivity": {
+            "active": "no",
+            "coupled": "None",
+            "value": "nan"
+          },
+          "type": "float"
+        },
+        "operation_year": {
+          "opt_value": "2025",
+          "sensitivity": {
+            "active": "no",
+            "coupled": "None",
+            "value": "nan"
+          },
+          "type": "Period"
+        },
+        "PPA": {
+          "opt_value": "0",
+          "sensitivity": {
+            "active": "no",
+            "coupled": "None",
+            "value": "nan"
+          },
+          "type": "bool"
+        },
+        "PPA_cost": {
+          "opt_value": "0",
+          "sensitivity": {
+            "active": "no",
+            "coupled": "None",
+            "value": "nan"
+          },
+          "type": "float"
+        },
+        "PPA_inflation_rate": {
+          "opt_value": "0",
+          "sensitivity": {
+            "active": "no",
+            "coupled": "None",
+            "value": "nan"
+          },
+          "type": "float"
+        },
+        "rated_capacity": {
+          "opt_value": "10000",
+          "sensitivity": {
+            "active": "no",
+            "coupled": "None",
+            "value": "nan"
+          },
+          "type": "float"
+        },
+        "rcost_kW": {
+          "opt_value": "0",
+          "sensitivity": {
+            "active": "no",
+            "coupled": "None",
+            "value": "nan"
+          },
+          "type": "float"
+        },
+        "replaceable": {
+          "opt_value": "0",
+          "sensitivity": {
+            "active": "no",
+            "coupled": "None",
+            "value": "nan"
+          },
+          "type": "bool"
+        },
+        "replacement_construction_time": {
           "opt_value": "1",
           "sensitivity": {
             "active": "no",
             "coupled": "None",
             "value": "nan"
           },
-          "type": "bool"
+          "type": "int"
         },
-        "incl_thermal_load": {
+        "salvage_value": {
           "opt_value": "0",
-          "sensitivity": {
-            "active": "no",
-            "coupled": "None",
-            "value": "nan"
-          },
-          "type": "bool"
-        },
-        "kappa_ch_max": {
-          "opt_value": "100000",
-          "sensitivity": {
-            "active": "no",
-            "coupled": "None",
-            "value": "nan"
-          },
-          "type": "float"
-        },
-        "kappa_ch_min": {
-          "opt_value": "100000",
-          "sensitivity": {
-            "active": "no",
-            "coupled": "None",
-            "value": "nan"
-          },
-          "type": "float"
-        },
-        "kappa_dis_max": {
-          "opt_value": "100000",
-          "sensitivity": {
-            "active": "no",
-            "coupled": "None",
-            "value": "nan"
-          },
-          "type": "float"
-        },
-        "kappa_dis_min": {
-          "opt_value": "100000",
-          "sensitivity": {
-            "active": "no",
-            "coupled": "None",
-            "value": "nan"
-          },
-          "type": "float"
-        },
-        "kappa_ene_max": {
-          "opt_value": "100000",
-          "sensitivity": {
-            "active": "no",
-            "coupled": "None",
-            "value": "nan"
-          },
-          "type": "float"
-        },
-        "kappa_ene_min": {
-          "opt_value": "100000",
-          "sensitivity": {
-            "active": "no",
-            "coupled": "None",
-            "value": "nan"
-          },
-          "type": "float"
-        },
-        "location": {
-          "opt_value": "customer",
-          "sensitivity": {
-            "active": "no",
-            "coupled": "None",
-            "value": "nan"
-          },
-          "type": "string"
-        },
-        "max_export": {
-          "opt_value": "0",
-          "sensitivity": {
-            "active": "no",
-            "coupled": "None",
-            "value": "nan"
-          },
-          "type": "float"
-        },
-        "max_import": {
-          "opt_value": "0",
-          "sensitivity": {
-            "active": "no",
-            "coupled": "None",
-            "value": "nan"
-          },
-          "type": "float"
-        },
-        "monthly_data_filename": {
-          "opt_value": "/Users/chukwukamonyei/Downloads/DER-VET_20250303182710/inputs/monthly.csv",
-          "sensitivity": {
-            "active": "no",
-            "coupled": "None",
-            "value": "nan"
-          },
-          "type": "string"
-        },
-        "n": {
-          "opt_value": "Year",
           "sensitivity": {
             "active": "no",
             "coupled": "None",
@@ -174,68 +255,32 @@
           },
           "type": "string/int"
         },
-        "opt_years": {
-          "opt_value": "2025",
-          "sensitivity": {
-            "active": "no",
-            "coupled": "None",
-            "value": "nan"
-          },
-          "type": "list/int"
-        },
-        "ownership": {
-          "opt_value": "3rd party",
-          "sensitivity": {
-            "active": "no",
-            "coupled": "None",
-            "value": "nan"
-          },
-          "type": "string"
-        },
-        "slack": {
+        "sr_response_time": {
           "opt_value": "0",
           "sensitivity": {
             "active": "no",
             "coupled": "None",
             "value": "nan"
           },
-          "type": "bool"
+          "type": "int"
         },
-        "start_year": {
-          "opt_value": "2025",
-          "sensitivity": {
-            "active": "no",
-            "coupled": "None",
-            "value": "nan"
-          },
-          "type": "Period"
-        },
-        "time_series_filename": {
-          "opt_value": "/Users/chukwukamonyei/Downloads/DER-VET_20250303182710/inputs/timeseries.csv",
-          "sensitivity": {
-            "active": "no",
-            "coupled": "None",
-            "value": "nan"
-          },
-          "type": "string"
-        },
-        "verbose": {
-          "opt_value": "1",
-          "sensitivity": {
-            "active": "no",
-            "coupled": "None",
-            "value": "nan"
-          },
-          "type": "bool"
-        },
-        "verbose_opt": {
+        "startup_time": {
           "opt_value": "0",
           "sensitivity": {
             "active": "no",
             "coupled": "None",
             "value": "nan"
           },
-          "type": "bool"
+          "type": "int"
+        },
+        "ter": {
+          "opt_value": "-2",
+          "sensitivity": {
+            "active": "no",
+            "coupled": "None",
+            "value": "nan"
+          },
+          "type": "float"
         }
       }
     }

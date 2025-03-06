@@ -13,16 +13,16 @@ const Services = () => {
 
   return (
     <div>
-      <h2 className="">Services</h2>
+      <h2 className="text-2xl font-[600]">Services</h2>
 
-      <div className="">
+      <div className="space-y-4">
         <h2 className="">Size Equipment in microgrid</h2>
 
         <Input type="radio" name="" label="Yes" />
         <Input type="radio" name="" label="No" />
       </div>
 
-      <div className="">
+      <div className="space-y-4">
         <h2 className="">Energy Price Source</h2>
 
         <Input
@@ -33,7 +33,7 @@ const Services = () => {
         <Input type="radio" name="" label="Whoesale energy market production" />
       </div>
 
-      <div className="">
+      <div className="space-y-5">
         <h2 className="">Customer Services </h2>
 
         <Input type="checkbox" name="" label="Reliability" />
