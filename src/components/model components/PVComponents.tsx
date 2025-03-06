@@ -351,14 +351,31 @@ const PVComponents = () => {
             />
           </div>
 
-          <Input name="" label="Decommisisioning Cost" />
+          <Input
+            name=""
+            label="Decommisisioning Cost"
+            value={
+              tags.PV["6ae6c43d-71c0-42ea-a574-c217e6b56753"].keys
+                .decommissioning_cost.opt_value
+            }
+            onChange={handleChange(
+              `tags.PV["6ae6c43d-71c0-42ea-a574-c217e6b56753"].keys.decommissioning_cost.opt_value`
+            )}
+          />
 
           <SelectInput
-            options={[{ label: "User Defined", value: "User defined" }]}
+            options={[{ label: "User Defined", value: "0" }]}
             label="Salvage Value"
           />
 
-          <Input name="" label="User defined Salvage Value ($)" />
+          <Input
+            name=""
+            label="User defined Salvage Value ($)"
+            value={
+              tags.PV["6ae6c43d-71c0-42ea-a574-c217e6b56753"].keys.salvage_value
+                .opt_value
+            }
+          />
 
           <SelectInput
             options={[{ label: "3", value: "3" }]}
