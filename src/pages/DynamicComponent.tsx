@@ -2,6 +2,7 @@ import BatteryComponents from "@/components/model components/BatteryComponents";
 import MiscellaneousComponents from "@/components/model components/MiscellaneousComponents";
 import PVComponents from "@/components/model components/PVComponents";
 import ReliabilityComponents from "@/components/model components/ReliabilityComponents";
+import RetailTariffComponents from "@/components/model components/RetailTariffComponents";
 import ServicesComponents from "@/components/model components/ServicesComponents";
 import { useParams } from "react-router-dom";
 
@@ -20,7 +21,7 @@ const DynamicComponent = () => {
   const getCurrentComponent: any = {
     [EComponentName.battery]: <BatteryComponents />,
     [EComponentName.pv]: <PVComponents />,
-    [EComponentName.retailTariff]: <ReliabilityComponents />,
+    [EComponentName.retailTariff]: <RetailTariffComponents />,
     [EComponentName.services]: <ServicesComponents />,
     [EComponentName.miscellaneous]: <MiscellaneousComponents />,
     [EComponentName.reliability]: <ReliabilityComponents />,
