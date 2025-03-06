@@ -3,6 +3,7 @@ import { Button } from "../ui/Button";
 import Input from "../ui/Input";
 import SelectInput from "../ui/SelectInput";
 import { RootState, updateField } from "@/store";
+import { useNavigate } from "react-router-dom";
 
 const PVComponents = () => {
   const { tags } = useSelector((state: RootState) => state.form);
@@ -16,6 +17,8 @@ const PVComponents = () => {
         customValue !== undefined ? customValue : event?.target.value;
       dispatch(updateField({ path, value }));
     };
+
+  const navigate = useNavigate();
 
   return (
     <div className=" min-h-[100vh] w-full bg-gray-100 p-5 grid place-items-center">
@@ -37,6 +40,7 @@ const PVComponents = () => {
             )}
           />
           <Input name="" label="Component Description" />
+
           <Input
             name=""
             label="Cost per kWac ($/kWac)"
@@ -417,7 +421,11 @@ const PVComponents = () => {
           <hr className="my-3" />
 
           <div className="flex justify-between w-full">
-            <Button size={"sm"} type="button">
+            <Button
+              onClick={() => navigate("/?step=3")}
+              type="button"
+              size={"sm"}
+            >
               <span className="">Save and Continue</span>
             </Button>
           </div>
