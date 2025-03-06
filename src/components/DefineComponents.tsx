@@ -4,7 +4,7 @@ import { EComponentName } from "@/pages/DynamicComponent";
 
 const DefineComponents = () => {
   // coming from state
-  const technologies = ["PV", "Battery"];
+  const technologies = ["pv", "battery"];
   const services = ["Site Information", "Reliability"];
   const Financial = [
     "Miscellaneous Inputs",
@@ -13,7 +13,10 @@ const DefineComponents = () => {
   ];
 
   const PlainCard = (props: { text: string }) => (
-    <div className="w-[300px] p-4 rounded cursor-pointer hover:bg-gray-600 hover:text-white text-white bg-red-400">
+    <div
+      className="w-[300px] p-4 rounded cursor-pointer hover:bg-gray-600 hover:text-white text-white
+    capitalise  bg-red-400"
+    >
       {props.text}
     </div>
   );
@@ -27,7 +30,7 @@ const DefineComponents = () => {
 
         <div className="space-y-3">
           {Array.from(technologies, (item) => (
-            <Link to={`/components/${EComponentName.battery}`}>
+            <Link key={item} to={`/components/${EComponentName.battery}`}>
               <PlainCard text={item} />
             </Link>
           ))}
@@ -39,7 +42,7 @@ const DefineComponents = () => {
 
         <div className="space-y-3">
           {Array.from(services, (item) => (
-            <PlainCard text={item} />
+            <PlainCard text={item} key={item} />
           ))}
         </div>
       </div>
@@ -48,8 +51,8 @@ const DefineComponents = () => {
         <h2 className="">Financial</h2>
 
         <div className="space-y-3">
-          {Array.from(Financial, (item) => (
-            <PlainCard text={item} />
+          {Array.from(Financial, (item, i) => (
+            <PlainCard text={item} key={i} />
           ))}
         </div>
       </div>

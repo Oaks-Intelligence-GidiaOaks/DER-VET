@@ -9,11 +9,13 @@ import storage from "redux-persist/lib/storage";
 import { persistReducer } from "redux-persist";
 import { RootObject } from "./output.interface";
 import inputJson from "./inputs.json";
+import set from "lodash/set";
+import cloneDeep from "lodash/cloneDeep";
 
 const persistConfig = {
   key: "root",
   storage,
-  whitelist: ["form"], // List of reducers to persist
+  whitelist: [],
 };
 
 const initialState: RootObject = inputJson;
@@ -23,11 +25,15 @@ const formSlice = createSlice({
   initialState,
   reducers: {
     updateField: (
-      state: any,
-      action: PayloadAction<{ field: string; data: any }>
+      state,
+      action: PayloadAction<{ path: string; value: any }>
     ) => {
-      state[action.payload.field] = action.payload;
+      const newState = cloneDeep(state);
+      set(newState, action.payload.path, action.payload.value);
+      return newState;
     },
+
+    resetForm: () => initialState,
   },
 });
 

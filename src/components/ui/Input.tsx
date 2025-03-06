@@ -47,8 +47,9 @@ const Input = ({
 
       <div
         className={cn(
-          "gro flex h-[48px] min-w-full items-center overflow-hidden bg-white rounded-md border-none border-input px-3 focus-within:border-[#22C55E]",
-          inputClassName
+          "gro flex h-[40px] min-w-full items-center overflow-hidden bg-white rounded-md  border-input px-3 focus-within:border-[#22C55E] border",
+          inputClassName,
+          (type === "radio" || type === "checkbox") && "!border-none h-[20px]"
         )}
       >
         {prependIcon}
@@ -58,7 +59,7 @@ const Input = ({
           type={type}
           placeholder={placeholder ? placeholder : ""}
           className={cn(
-            "placeholder:text-grey-swatch-600 flex h-[48px] w-full flex-1 bg-transparent py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50",
+            "placeholder:text-grey-swatch-600 flex h-full w-full flex-1 bg-transparent py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50",
             prependIcon ? "pl-3" : "",
             className
           )}
