@@ -332,6 +332,7 @@ const PVComponents = () => {
                   .opt_value === "1"
               }
             />
+
             <Input
               type="radio"
               name=""
@@ -380,6 +381,20 @@ const PVComponents = () => {
           <SelectInput
             options={[{ label: "3", value: "3" }]}
             label="MACRS Term (years)"
+            value={{
+              label:
+                tags.PV["6ae6c43d-71c0-42ea-a574-c217e6b56753"].keys.macrs_term
+                  .opt_value,
+              value:
+                tags.PV["6ae6c43d-71c0-42ea-a574-c217e6b56753"].keys.macrs_term
+                  .opt_value,
+            }}
+            onChange={(val) =>
+              handleChange(
+                `tags.PV["6ae6c43d-71c0-42ea-a574-c217e6b56753"].keys.macrs_term.opt_value`,
+                val?.value
+              )
+            }
           />
 
           <hr className="my-3" />
@@ -402,10 +417,6 @@ const PVComponents = () => {
           <hr className="my-3" />
 
           <div className="flex justify-between w-full">
-            <Button size={"sm"} type="button">
-              <span className="">Save</span>
-            </Button>
-
             <Button size={"sm"} type="button">
               <span className="">Save and Continue</span>
             </Button>
