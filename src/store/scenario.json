@@ -1,0 +1,241 @@
+"Scenario": {
+    "": {
+      "active": "yes",
+      "keys": {
+        "activate_electricity_load_dump": {
+          "opt_value": "0",
+          "sensitivity": {
+            "active": "no",
+            "coupled": "None",
+            "value": "nan"
+          },
+          "type": "bool"
+        },
+        "apply_interconnection_constraints": {
+          "opt_value": "0",
+          "sensitivity": {
+            "active": "no",
+            "coupled": "None",
+            "value": "nan"
+          },
+          "type": "bool"
+        },
+        "binary": {
+          "opt_value": "0",
+          "sensitivity": {
+            "active": "no",
+            "coupled": "None",
+            "value": "nan"
+          },
+          "type": "bool"
+        },
+        "def_growth": {
+          "opt_value": "2",
+          "sensitivity": {
+            "active": "no",
+            "coupled": "None",
+            "value": "nan"
+          },
+          "type": "float"
+        },
+        "dt": {
+          "opt_value": "1",
+          "sensitivity": {
+            "active": "no",
+            "coupled": "None",
+            "value": "nan"
+          },
+          "type": "float"
+        },
+        "end_year": {
+          "opt_value": "2044",
+          "sensitivity": {
+            "active": "no",
+            "coupled": "None",
+            "value": "nan"
+          },
+          "type": "Period"
+        },
+        "incl_site_load": {
+          "opt_value": "1",
+          "sensitivity": {
+            "active": "no",
+            "coupled": "None",
+            "value": "nan"
+          },
+          "type": "bool"
+        },
+        "incl_thermal_load": {
+          "opt_value": "0",
+          "sensitivity": {
+            "active": "no",
+            "coupled": "None",
+            "value": "nan"
+          },
+          "type": "bool"
+        },
+        "kappa_ch_max": {
+          "opt_value": "100000",
+          "sensitivity": {
+            "active": "no",
+            "coupled": "None",
+            "value": "nan"
+          },
+          "type": "float"
+        },
+        "kappa_ch_min": {
+          "opt_value": "100000",
+          "sensitivity": {
+            "active": "no",
+            "coupled": "None",
+            "value": "nan"
+          },
+          "type": "float"
+        },
+        "kappa_dis_max": {
+          "opt_value": "100000",
+          "sensitivity": {
+            "active": "no",
+            "coupled": "None",
+            "value": "nan"
+          },
+          "type": "float"
+        },
+        "kappa_dis_min": {
+          "opt_value": "100000",
+          "sensitivity": {
+            "active": "no",
+            "coupled": "None",
+            "value": "nan"
+          },
+          "type": "float"
+        },
+        "kappa_ene_max": {
+          "opt_value": "100000",
+          "sensitivity": {
+            "active": "no",
+            "coupled": "None",
+            "value": "nan"
+          },
+          "type": "float"
+        },
+        "kappa_ene_min": {
+          "opt_value": "100000",
+          "sensitivity": {
+            "active": "no",
+            "coupled": "None",
+            "value": "nan"
+          },
+          "type": "float"
+        },
+        "location": {
+          "opt_value": "customer",
+          "sensitivity": {
+            "active": "no",
+            "coupled": "None",
+            "value": "nan"
+          },
+          "type": "string"
+        },
+        "max_export": {
+          "opt_value": "0",
+          "sensitivity": {
+            "active": "no",
+            "coupled": "None",
+            "value": "nan"
+          },
+          "type": "float"
+        },
+        "max_import": {
+          "opt_value": "0",
+          "sensitivity": {
+            "active": "no",
+            "coupled": "None",
+            "value": "nan"
+          },
+          "type": "float"
+        },
+        "monthly_data_filename": {
+          "opt_value": "/Users/chukwukamonyei/Downloads/DER-VET_20250303182710/inputs/monthly.csv",
+          "sensitivity": {
+            "active": "no",
+            "coupled": "None",
+            "value": "nan"
+          },
+          "type": "string"
+        },
+        "n": {
+          "opt_value": "Year",
+          "sensitivity": {
+            "active": "no",
+            "coupled": "None",
+            "value": "nan"
+          },
+          "type": "string/int"
+        },
+        "opt_years": {
+          "opt_value": "2025",
+          "sensitivity": {
+            "active": "no",
+            "coupled": "None",
+            "value": "nan"
+          },
+          "type": "list/int"
+        },
+        "ownership": {
+          "opt_value": "3rd party",
+          "sensitivity": {
+            "active": "no",
+            "coupled": "None",
+            "value": "nan"
+          },
+          "type": "string"
+        },
+        "slack": {
+          "opt_value": "0",
+          "sensitivity": {
+            "active": "no",
+            "coupled": "None",
+            "value": "nan"
+          },
+          "type": "bool"
+        },
+        "start_year": {
+          "opt_value": "2025",
+          "sensitivity": {
+            "active": "no",
+            "coupled": "None",
+            "value": "nan"
+          },
+          "type": "Period"
+        },
+        "time_series_filename": {
+          "opt_value": "/Users/chukwukamonyei/Downloads/DER-VET_20250303182710/inputs/timeseries.csv",
+          "sensitivity": {
+            "active": "no",
+            "coupled": "None",
+            "value": "nan"
+          },
+          "type": "string"
+        },
+        "verbose": {
+          "opt_value": "1",
+          "sensitivity": {
+            "active": "no",
+            "coupled": "None",
+            "value": "nan"
+          },
+          "type": "bool"
+        },
+        "verbose_opt": {
+          "opt_value": "0",
+          "sensitivity": {
+            "active": "no",
+            "coupled": "None",
+            "value": "nan"
+          },
+          "type": "bool"
+        }
+      }
+    }
+  },

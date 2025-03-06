@@ -1,8 +1,23 @@
+import { useDispatch, useSelector } from "react-redux";
 import { Button } from "../ui/Button";
 import Input from "../ui/Input";
 import SelectInput from "../ui/SelectInput";
+import { RootState, updateField } from "@/store";
 
 const BatteryComponents = () => {
+  // redux store
+  const { tags } = useSelector((state: RootState) => state.form);
+
+  const dispatch = useDispatch();
+
+  const handleChange =
+    (path: string, customValue?: any) =>
+    (event?: React.ChangeEvent<HTMLInputElement>) => {
+      const value =
+        customValue !== undefined ? customValue : event?.target.value;
+      dispatch(updateField({ path, value }));
+    };
+
   return (
     <div>
       <h2 className="">Technology: Battery Storage</h2>
@@ -10,7 +25,16 @@ const BatteryComponents = () => {
       <hr className="my-4" />
 
       <div className="">
-        <Input name="" label="Component Name" />
+        <Input
+          name=""
+          label="Component Name"
+          value={
+            tags.Battery["10487cf5-16d9-4b78-8109-440b29e1ef78"].keys.name
+              .opt_value
+          }
+          onChange={handleChange(`tags.Battery["10487cf5-16d9-4b78-8109-440b29e1ef78"].keys.name
+              .opt_value`)}
+        />
         <Input name="" label="Component Description" />
       </div>
 

@@ -118,21 +118,76 @@ const ProjectConfig = () => {
           <SelectInput
             options={[{ label: "60", value: "60" }]}
             label="Timestep (minutes)"
-            // value={}
           />
         </div>
 
         <div className="space-y-5">
           <h2 className="">Grid Domain</h2>
-          <Input type="radio" label="Generation" name="" />
-          <Input type="radio" label="Transmission" name="" />
-          <Input type="radio" label="Distribution" name="" />
+
+          <Input
+            type="radio"
+            label="Generation"
+            name=""
+            value={tags.Scenario[""].keys.location.opt_value}
+            onChange={handleChange(
+              'tags.Scenario[""].keys.location.opt_value}',
+              "generation"
+            )}
+            checked={tags.Scenario[""].keys.location.opt_value === "generation"}
+          />
+
+          <Input
+            type="radio"
+            label="Transmission"
+            name=""
+            value={tags.Scenario[""].keys.location.opt_value}
+            onChange={handleChange(
+              'tags.Scenario[""].keys.location.opt_value}',
+              "transmission"
+            )}
+            checked={
+              tags.Scenario[""].keys.location.opt_value === "transmission"
+            }
+          />
+
+          <Input
+            type="radio"
+            label="Customer"
+            name=""
+            value={tags.Scenario[""].keys.location.opt_value}
+            onChange={handleChange(
+              'tags.Scenario[""].keys.location.opt_value}',
+              "customer"
+            )}
+            checked={tags.Scenario[""].keys.location.opt_value === "customer"}
+          />
         </div>
 
         <div className="space-y-5">
           <h2 className="">Ownership</h2>
-          <Input type="radio" label="Customer" name="" />
-          <Input type="radio" label="Utility" name="" />
+          <Input
+            type="radio"
+            label="Customer"
+            name=""
+            value={tags.Scenario[""].keys.location.opt_value}
+            onChange={handleChange(
+              'tags.Scenario[""].keys.ownership.opt_value}',
+              "customer"
+            )}
+            checked={tags.Scenario[""].keys.location.opt_value === "customer"}
+          />
+          <Input
+            type="radio"
+            label="Utility"
+            name=""
+            value={tags.Scenario[""].keys.location.opt_value}
+            onChange={handleChange(
+              'tags.Scenario[""].keys.ownership.opt_value}',
+              "customer"
+            )}
+            checked={tags.Scenario[""].keys.location.opt_value === "customer"}
+          />
+
           <Input type="radio" label="3rd Party" name="" />
         </div>
 
