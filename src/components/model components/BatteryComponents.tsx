@@ -11,6 +11,7 @@ const BatteryComponents = () => {
   const dispatch = useDispatch();
 
   const handleChange =
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     (path: string, customValue?: any) =>
     (event?: React.ChangeEvent<HTMLInputElement>) => {
       const value =
@@ -66,21 +67,72 @@ const BatteryComponents = () => {
         <Input type="radio" name="" label="No" />
       </div>
 
-      <Input name="" label="Toundtrip Efficiency" />
+      <Input
+        name=""
+        label="Roundtrip Efficiency"
+        value={
+          tags.Battery["10487cf5-16d9-4b78-8109-440b29e1ef78"].keys.rte
+            .opt_value
+        }
+        onChange={handleChange(`tags.Battery["10487cf5-16d9-4b78-8109-440b29e1ef78"].keys.rte
+            .opt_value`)}
+      />
 
       <div className="">
         <h2 className="">State of Charge</h2>
 
-        <Input name="" label="Upper SOC Limit (%)" />
-        <Input name="" label="Target SOC (%)" />
-        <Input name="" label="Lower SOC Limit (%)" />
+        <Input
+          name=""
+          label="Upper SOC Limit (%)"
+          value={
+            tags.Battery["10487cf5-16d9-4b78-8109-440b29e1ef78"].keys.ulsoc
+              .opt_value
+          }
+          onChange={handleChange(
+            `tags.Battery["10487cf5-16d9-4b78-8109-440b29e1ef78"].keys.ulsoc.opt_value`
+          )}
+        />
+        <Input
+          name=""
+          label="Target SOC (%)"
+          value={
+            tags.Battery["10487cf5-16d9-4b78-8109-440b29e1ef78"].keys.soc_target
+              .opt_value
+          }
+          onChange={handleChange(
+            `tags.Battery["10487cf5-16d9-4b78-8109-440b29e1ef78"].keys.soc_target.opt_value`
+          )}
+        />
+        <Input
+          name=""
+          label="Lower SOC Limit (%)"
+          value={
+            tags.Battery["10487cf5-16d9-4b78-8109-440b29e1ef78"].keys.llsoc
+              .opt_value
+          }
+          onChange={handleChange(
+            `tags.Battery["10487cf5-16d9-4b78-8109-440b29e1ef78"].keys.llsoc.opt_value`
+          )}
+        />
         <Input name="" label="Self-Discharge Rate (%/hour)" />
       </div>
 
       <div className="">
         <h2 className="">Limit daily Cycling?</h2>
 
-        <Input type="radio" name="" label="Yes" />
+        <Input
+          type="radio"
+          name=""
+          label="Yes"
+          value={
+            tags.Battery["10487cf5-16d9-4b78-8109-440b29e1ef78"].keys
+              .daily_cycle_limit.opt_value
+          }
+          onChange={handleChange(
+            `tags.Battery["10487cf5-16d9-4b78-8109-440b29e1ef78"].keys
+              .daily_cycle_limit.opt_value`
+          )}
+        />
         <Input type="radio" name="" label="No" />
       </div>
 
@@ -88,7 +140,19 @@ const BatteryComponents = () => {
         <h2 className="">Include Degradation due to cycling?</h2>
 
         <Input type="radio" name="" label="Yes" />
-        <Input type="radio" name="" label="No" />
+        <Input
+          type="radio"
+          name=""
+          label="No"
+          value={
+            tags.Battery["10487cf5-16d9-4b78-8109-440b29e1ef78"].keys
+              .incl_cycle_degrade.opt_value
+          }
+          onChange={handleChange(
+            `tags.Battery["10487cf5-16d9-4b78-8109-440b29e1ef78"].keys
+              .incl_cycle_degrade.opt_value`
+          )}
+        />
       </div>
 
       <div className="">
@@ -101,39 +165,187 @@ const BatteryComponents = () => {
       <div className="">
         <h2 className="">Cost Function</h2>
 
-        <Input name="" label="Capital Cost ($)" />
-        <Input name="" label="Capital Cost per kW - power capacity ($/kW)" />
-        <Input name="" label="Capital Cost per kWh - energy capacity ($/kW)" />
+        <Input
+          name=""
+          label="Capital Cost ($)"
+          value={
+            tags.Battery["10487cf5-16d9-4b78-8109-440b29e1ef78"].keys.ccost
+              .opt_value
+          }
+          onChange={handleChange(
+            `tags.Battery["10487cf5-16d9-4b78-8109-440b29e1ef78"].keys.ccost.opt_value`
+          )}
+        />
+        <Input
+          name=""
+          label="Capital Cost per kW - power capacity ($/kW)"
+          value={
+            tags.Battery["10487cf5-16d9-4b78-8109-440b29e1ef78"].keys.ccost_kW
+              .opt_value
+          }
+          onChange={handleChange(
+            `tags.Battery["10487cf5-16d9-4b78-8109-440b29e1ef78"].keys.ccost_kW.opt_value`
+          )}
+        />
+        <Input
+          name=""
+          label="Capital Cost per kWh - energy capacity ($/kW)"
+          value={
+            tags.Battery["10487cf5-16d9-4b78-8109-440b29e1ef78"].keys.ccost_kWh
+              .opt_value
+          }
+          onChange={handleChange(
+            `tags.Battery["10487cf5-16d9-4b78-8109-440b29e1ef78"].keys.ccost_kWh.opt_value`
+          )}
+        />
       </div>
 
-      <Input name="" label="Fixed O&M Costs ($/kW-year)" />
+      <Input
+        name=""
+        label="Fixed O&M Costs ($/kW-year)"
+        value={
+          tags.Battery["10487cf5-16d9-4b78-8109-440b29e1ef78"].keys.fixedOM
+            .opt_value
+        }
+        onChange={handleChange(
+          `tags.Battery["10487cf5-16d9-4b78-8109-440b29e1ef78"].keys.fixedOM.opt_value`
+        )}
+      />
       <Input name="" label="Variable O&M Costs ($/MWh)" />
 
-      <Input name="" label="Construction Year" />
-      <Input name="" label="Operation Year" />
-      <Input name="" label="Expected lifetime Year (years)" />
+      <Input
+        name=""
+        label="Construction Year"
+        value={
+          tags.Battery["10487cf5-16d9-4b78-8109-440b29e1ef78"].keys
+            .construction_year.opt_value
+        }
+        onChange={handleChange(
+          `tags.Battery["10487cf5-16d9-4b78-8109-440b29e1ef78"].keys.construction_year.opt_value`
+        )}
+      />
+      <Input
+        name=""
+        label="Operation Year"
+        value={
+          tags.Battery["10487cf5-16d9-4b78-8109-440b29e1ef78"].keys
+            .operation_year.opt_value
+        }
+        onChange={handleChange(
+          `tags.Battery["10487cf5-16d9-4b78-8109-440b29e1ef78"].keys.operation_year.opt_value`
+        )}
+      />
+      <Input
+        name=""
+        label="Expected lifetime Year (years)"
+        value={
+          tags.Battery["10487cf5-16d9-4b78-8109-440b29e1ef78"].keys
+            .expected_lifetime.opt_value
+        }
+        onChange={handleChange(
+          `tags.Battery["10487cf5-16d9-4b78-8109-440b29e1ef78"].keys.expected_lifetime.opt_value`
+        )}
+      />
 
       <div className="">
         <h2 className="">Replaceable</h2>
 
-        <Input type="radio" name="" label="Yes" />
-        <Input type="radio" name="" label="No" />
+        <Input
+          type="radio"
+          name=""
+          label="Yes"
+          value={
+            tags.Battery["10487cf5-16d9-4b78-8109-440b29e1ef78"].keys
+              .replaceable.opt_value
+          }
+          onChange={handleChange(
+            `tags.Battery["10487cf5-16d9-4b78-8109-440b29e1ef78"].keys.replaceable.opt_value`
+          )}
+        />
+        <Input
+          type="radio"
+          name=""
+          label="No"
+          value={
+            tags.Battery["10487cf5-16d9-4b78-8109-440b29e1ef78"].keys
+              .replaceable.opt_value
+          }
+          onChange={handleChange(
+            `tags.Battery["10487cf5-16d9-4b78-8109-440b29e1ef78"].keys.replaceable.opt_value`
+          )}
+        />
       </div>
 
-      <Input name="" label="Decommisisioning Cost" />
-
-      <SelectInput
-        options={[{ label: "User Defined", value: "User defined" }]}
-        label="Salvage Value"
+      <Input
+        name=""
+        label="Decommissioning Cost"
+        value={
+          tags.Battery["10487cf5-16d9-4b78-8109-440b29e1ef78"].keys
+            .decommissioning_cost.opt_value
+        }
+        onChange={handleChange(
+          `tags.Battery["10487cf5-16d9-4b78-8109-440b29e1ef78"].keys.decommissioning_cost.opt_value`
+        )}
       />
 
-      <Input name="" label="User defined Salvage Value ($)" />
+      <SelectInput
+        options={[{ label: "User Defined", value: "0" }]}
+        label="Salvage Value"
+        value={{
+          label: "User Defined",
+          value:
+            tags.Battery["10487cf5-16d9-4b78-8109-440b29e1ef78"].keys
+              .salvage_value.opt_value,
+        }}
+        onChange={(e) =>
+          handleChange(
+            `tags.Battery["10487cf5-16d9-4b78-8109-440b29e1ef78"].keys.salvage_value.opt_value`,
+            e?.value
+          )
+        }
+      />
 
-      <Input name="" label="Technology Escalation Rate (%)" />
+      <Input
+        name=""
+        label="User defined Salvage Value ($)"
+        value={
+          tags.Battery["10487cf5-16d9-4b78-8109-440b29e1ef78"].keys.sdr
+            .opt_value
+        }
+        onChange={handleChange(
+          `tags.Battery["10487cf5-16d9-4b78-8109-440b29e1ef78"].keys.sdr
+            .opt_value`
+        )}
+      />
+
+      <Input
+        name=""
+        label="Technology Escalation Rate (%)"
+        value={
+          tags.Battery["10487cf5-16d9-4b78-8109-440b29e1ef78"].keys.ter
+            .opt_value
+        }
+        onChange={handleChange(
+          `tags.Battery["10487cf5-16d9-4b78-8109-440b29e1ef78"].keys.ter
+            .opt_value`
+        )}
+      />
 
       <SelectInput
         options={[{ label: "3", value: "3" }]}
         label="MACRS Term (years)"
+        value={{
+          label: "3",
+          value:
+            tags.Battery["10487cf5-16d9-4b78-8109-440b29e1ef78"].keys.macrs_term
+              .opt_value,
+        }}
+        onChange={(e) =>
+          handleChange(
+            `tags.Battery["10487cf5-16d9-4b78-8109-440b29e1ef78"].keys.macrs_term.opt_value`,
+            e?.value
+          )
+        }
       />
 
       <hr className="my-3" />

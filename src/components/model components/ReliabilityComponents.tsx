@@ -1,7 +1,24 @@
+import { useDispatch, useSelector } from "react-redux";
 import { Button } from "../ui/Button";
 import Input from "../ui/Input";
+import { RootState, updateField } from "@/store";
 
 const ReliabilityComponents = () => {
+
+   // redux store
+    const { tags } = useSelector((state: RootState) => state.form);
+  
+    const dispatch = useDispatch();
+  
+    const handleChange =
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      (path: string, customValue?: any) =>
+      (event?: React.ChangeEvent<HTMLInputElement>) => {
+        const value =
+          customValue !== undefined ? customValue : event?.target.value;
+        dispatch(updateField({ path, value }));
+      };
+      
   return (
     <div>
       <h2 className="">Services: Reliability</h2>
@@ -19,10 +36,21 @@ const ReliabilityComponents = () => {
           type="radio"
           name=""
           label="Only Calculate the reliability benefit of the DERs"
+          value={tags.Reliability[""].keys.post_facto_only.opt_value}
+          onChange={handleChange(
+            `tags.Reliability[""].keys.post_facto_only.opt_value`
+          )}
         />
       </div>
 
-      <Input name="" label="Maximum Outage Duration to Plot (hours)" />
+      <Input
+        name=""
+        label="Maximum Outage Duration to Plot (hours)"
+        value={tags.Reliability[""].keys.max_outage_duration.opt_value}
+        onChange={handleChange(
+          `tags.Reliability[""].keys.max_outage_duration.opt_value`
+        )}
+      />
 
       <div className="">
         <p className="">
