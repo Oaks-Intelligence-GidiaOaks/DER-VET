@@ -1,6 +1,11 @@
+import { useState } from "react";
 import { Button } from "./ui/Button";
+import { useNavigate } from "react-router-dom";
 
 const DER = () => {
+  const [selectedDers, setSelectedDers] = useState<any>([]);
+  const navigate = useNavigate();
+
   const DerCard = (props: {
     text: string;
     count: number;
@@ -12,7 +17,12 @@ const DER = () => {
       <p className="text-center">{props.text}</p>
 
       <div className="bg-gray-200 p-2 rounded grid place-items-center">
-        <Button className="border" size={"sm"}>
+        <Button
+          type="button"
+          onClick={props.action}
+          className="border"
+          size={"sm"}
+        >
           <span>Add</span>
         </Button>
       </div>
@@ -20,21 +30,6 @@ const DER = () => {
   );
 
   const ders = [
-    {
-      name: "ICE",
-      text: "Internal Combustion Engine (ICE) Generator Sets",
-    },
-    {
-      name: "PV",
-      text: "Solar Photovoltaic (PV) Systems",
-    },
-    {
-      name: "Battery",
-      text: "Battery Energy Storage Systems (BESS)",
-    },
-  ];
-
-  const selectedDers = [
     {
       name: "PV",
       text: "Solar Photovoltaic (PV) Systems",
@@ -48,23 +43,38 @@ const DER = () => {
   return (
     <div>
       <h2 className=""> Distributed Energy Resources (DERs) </h2>
-      <div className="flex">
-        <div className="">
-          {ders.map((item) => (
-            <DerCard text={item.text} action={() => {}} count={0} />
+      <div className="flex gap-6">
+        <div className="space-y-6">
+          {ders.map((item, i) => (
+            <DerCard
+              text={item.text}
+              action={() =>
+                setSelectedDers((prev: any) =>
+                  prev.some((der: any) => der.text === item.text)
+                    ? prev
+                    : [...prev, ders[i]]
+                )
+              }
+              count={0}
+            />
           ))}
         </div>
 
         <div className="">
-          {Array.from(selectedDers, (item) => (
-            <div className="flex items-center gap-3 border border-gray-300 rounded px-1">
+          {/* @ts-ignore */}
+          {Array.from(selectedDers, (item: any, i) => (
+            <div
+              onClick={() => navigate(`/components/${item.name.toLowerCase()}`)}
+              className="flex items-center justify-between cursor-pointer  gap-3 border border-gray-300 rounded px-1 min-w-[250px]"
+            >
               <span>{item.name}</span>
 
-              <Button size={"sm"} className="ml-auto">
-                <span className="">Deactivate</span>
-              </Button>
-
               <Button
+                // onClick={() =>
+                //   setSelectedDers((prev: any) =>
+                //     prev.filter((_: any, index: number) => index !== i)
+                //   )
+                // }
                 className="bg-red-500 w-[30px] h-[30px] rounded-full"
                 size={"icon"}
               >

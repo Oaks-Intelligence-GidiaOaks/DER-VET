@@ -174,21 +174,31 @@ const ProjectConfig = () => {
               'tags.Scenario[""].keys.ownership.opt_value}',
               "customer"
             )}
-            checked={tags.Scenario[""].keys.location.opt_value === "customer"}
+            checked={tags.Scenario[""].keys.ownership.opt_value === "customer"}
           />
           <Input
             type="radio"
             label="Utility"
             name=""
-            value={tags.Scenario[""].keys.location.opt_value}
+            value={tags.Scenario[""].keys.ownership.opt_value}
             onChange={handleChange(
               'tags.Scenario[""].keys.ownership.opt_value}',
-              "customer"
+              "utility"
             )}
-            checked={tags.Scenario[""].keys.location.opt_value === "customer"}
+            checked={tags.Scenario[""].keys.ownership.opt_value === "utility"}
           />
 
-          <Input type="radio" label="3rd Party" name="" />
+          <Input
+            type="radio"
+            label="3rd Party"
+            name=""
+            value={tags.Scenario[""].keys.ownership.opt_value}
+            onChange={handleChange(
+              'tags.Scenario[""].keys.ownership.opt_value}',
+              "3rd party"
+            )}
+            checked={tags.Scenario[""].keys.ownership.opt_value === "3rd party"}
+          />
         </div>
 
         <div className="flex justify-between w-full mt-12">
