@@ -4,11 +4,37 @@ import Input from "../ui/Input";
 import SelectInput from "../ui/SelectInput";
 import { RootState, updateField } from "@/store";
 import { useNavigate } from "react-router-dom";
+import { useMutation } from "@tanstack/react-query";
+import axios from "axios";
+import toast from "react-hot-toast";
 
 const PVComponents = () => {
   const { tags } = useSelector((state: RootState) => state.form);
 
   const dispatch = useDispatch();
+
+  const { mutateAsync, isPending } = useMutation({
+    mutationKey: ["update-file"],
+    mutationFn: async (formData: FormData) => {
+      axios.post(`https://ai-api-staging.pollsensei.ai/files`, formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
+    },
+    onSuccess: (sx: any) => {
+      console.log(sx);
+      toast.success("upload successful");
+
+      // dispatch to state
+      // dispatch(updateFile(sx.data))
+    },
+    onError: (ex: any) => {
+      toast.error(
+        ex?.response?.data?.message || "Error uploading PV Generation file"
+      );
+    },
+  });
 
   const handleChange =
     (path: string, customValue?: any) =>
@@ -17,6 +43,24 @@ const PVComponents = () => {
         customValue !== undefined ? customValue : event?.target.value;
       dispatch(updateField({ path, value }));
     };
+
+  const handeFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { files } = e.target;
+
+    // change name
+    const file = files?.[0];
+
+    if (file) {
+      console.log(file);
+
+      const formData = new FormData();
+
+      formData.append("file", file);
+
+      // make request and update
+      mutateAsync(formData);
+    }
+  };
 
   const navigate = useNavigate();
 
@@ -422,14 +466,13 @@ const PVComponents = () => {
             </p>
           </p>
 
-          <Input type="file" name="" />
-
-          <input type="file" name="" id="" />
+          <input type="file" name="" id="" onChange={handeFileChange} />
 
           <hr className="my-3" />
 
           <div className="flex justify-between w-full">
             <Button
+              disabled={isPending}
               onClick={() => navigate("/?step=4")}
               type="button"
               size={"sm"}

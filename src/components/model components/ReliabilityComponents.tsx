@@ -1,27 +1,66 @@
 import { useDispatch, useSelector } from "react-redux";
 import { Button } from "../ui/Button";
 import Input from "../ui/Input";
-import { RootState, updateField } from "@/store";
+import { RootState, updateField, updateFile } from "@/store";
 import { useNavigate } from "react-router-dom";
+import { useMutation } from "@tanstack/react-query";
+import axios from "axios";
+import toast from "react-hot-toast";
 
 const ReliabilityComponents = () => {
   // redux store
   const { tags } = useSelector((state: RootState) => state.form);
-
   const navigate = useNavigate();
-
   const dispatch = useDispatch();
 
+  const { mutateAsync, isPending } = useMutation({
+    mutationKey: ["update-file"],
+    mutationFn: async (formData: FormData) => {
+      axios.post(`https://ai-api-staging.pollsensei.ai/files`, formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
+    },
+    onSuccess: (sx: any) => {
+      console.log(sx);
+      toast.success("upload successful");
+
+      // dispatch to state
+      // dispatch(updateFile(sx.data))
+    },
+    onError: (ex: any) => {
+      toast.error(
+        ex?.response?.data?.message || "Error uploading Critical Load file"
+      );
+    },
+  });
+
   const handleChange =
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    (path: string, customValue?: any) =>
+    (event?: React.ChangeEvent<HTMLInputElement>) => {
+      const value =
+        customValue !== undefined ? customValue : event?.target.value;
+      dispatch(updateField({ path, value }));
+    };
 
+  const handeFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { files } = e.target;
 
-      (path: string, customValue?: any) =>
-      (event?: React.ChangeEvent<HTMLInputElement>) => {
-        const value =
-          customValue !== undefined ? customValue : event?.target.value;
-        dispatch(updateField({ path, value }));
-      };
+    // change name
+    const file = files?.[0];
+
+    if (file) {
+      console.log(file);
+
+      const formData = new FormData();
+
+      formData.append("file", file);
+
+      // make request and update
+      mutateAsync(formData);
+    }
+  };
 
   return (
     <div className=" min-h-[100vh] w-full bg-gray-100 p-5 grid place-items-center">
@@ -72,13 +111,19 @@ const ReliabilityComponents = () => {
           </p>
 
           <p className="">
-            "Download a sample siteLoad .csv file with a 60 minute timestep for
-            a year with 365 days (8,760 entries).
+            "Download a sample CriticalLoad .csv file with a 60 minute timestep
+            for a year with 365 days (8,760 entries).
           </p>
         </div>
 
         <div className="flex items-center">
-          <input type="file" name="" id="" />
+          <input
+            type="file"
+            name=""
+            id=""
+            className="w-fit"
+            onChange={handeFileChange}
+          />
 
           <Button type="button" className="bg-red-500">
             <span>Remove Data</span>
@@ -91,6 +136,7 @@ const ReliabilityComponents = () => {
 
         <div className="flex justify-between w-fit ml-auto">
           <Button
+            disabled={isPending}
             onClick={() => {
               navigate(`/?step=4`);
             }}
