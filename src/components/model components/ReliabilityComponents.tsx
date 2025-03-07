@@ -36,6 +36,7 @@ const ReliabilityComponents = () => {
             type="radio"
             name=""
             label="Optimise DER Size/operation for reliability "
+            checked={false}
           />
 
           <Input

@@ -130,7 +130,7 @@ const ProjectConfig = () => {
             name=""
             value={tags.Scenario[""].keys.location.opt_value}
             onChange={handleChange(
-              'tags.Scenario[""].keys.location.opt_value}',
+              'tags.Scenario[""].keys.location.opt_value',
               "generation"
             )}
             checked={tags.Scenario[""].keys.location.opt_value === "generation"}
@@ -142,7 +142,7 @@ const ProjectConfig = () => {
             name=""
             value={tags.Scenario[""].keys.location.opt_value}
             onChange={handleChange(
-              'tags.Scenario[""].keys.location.opt_value}',
+              'tags.Scenario[""].keys.location.opt_value',
               "transmission"
             )}
             checked={
@@ -156,7 +156,7 @@ const ProjectConfig = () => {
             name=""
             value={tags.Scenario[""].keys.location.opt_value}
             onChange={handleChange(
-              'tags.Scenario[""].keys.location.opt_value}',
+              'tags.Scenario[""].keys.location.opt_value',
               "customer"
             )}
             checked={tags.Scenario[""].keys.location.opt_value === "customer"}
@@ -171,7 +171,7 @@ const ProjectConfig = () => {
             name=""
             value={tags.Scenario[""].keys.location.opt_value}
             onChange={handleChange(
-              'tags.Scenario[""].keys.ownership.opt_value}',
+              'tags.Scenario[""].keys.ownership.opt_value',
               "customer"
             )}
             checked={tags.Scenario[""].keys.ownership.opt_value === "customer"}
@@ -182,7 +182,7 @@ const ProjectConfig = () => {
             name=""
             value={tags.Scenario[""].keys.ownership.opt_value}
             onChange={handleChange(
-              'tags.Scenario[""].keys.ownership.opt_value}',
+              'tags.Scenario[""].keys.ownership.opt_value',
               "utility"
             )}
             checked={tags.Scenario[""].keys.ownership.opt_value === "utility"}
@@ -194,7 +194,7 @@ const ProjectConfig = () => {
             name=""
             value={tags.Scenario[""].keys.ownership.opt_value}
             onChange={handleChange(
-              'tags.Scenario[""].keys.ownership.opt_value}',
+              'tags.Scenario[""].keys.ownership.opt_value',
               "3rd party"
             )}
             checked={tags.Scenario[""].keys.ownership.opt_value === "3rd party"}

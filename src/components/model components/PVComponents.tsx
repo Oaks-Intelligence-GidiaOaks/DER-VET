@@ -116,8 +116,7 @@ const PVComponents = () => {
                   .opt_value
               }
               onChange={handleChange(
-                tags.PV["6ae6c43d-71c0-42ea-a574-c217e6b56753"].keys.grid_charge
-                  .opt_value,
+                'tags.PV["6ae6c43d-71c0-42ea-a574-c217e6b56753"].keys.grid_charge.opt_value',
                 "1"
               )}
             />
@@ -135,8 +134,7 @@ const PVComponents = () => {
                   ?.grid_charge?.opt_value
               }
               onChange={handleChange(
-                tags?.PV?.["6ae6c43d-71c0-42ea-a574-c217e6b56753"]?.keys
-                  ?.grid_charge?.opt_value,
+                'tags.PV["6ae6c43d-71c0-42ea-a574-c217e6b56753"].keys.grid_charge.opt_value',
                 "0"
               )}
             />
@@ -170,11 +168,11 @@ const PVComponents = () => {
                   .opt_value === "1"
               }
               onChange={handleChange(
-                `  tags.PV["6ae6c43d-71c0-42ea-a574-c217e6b56753"].keys.curtail
-                  .opt_value`,
+                `tags.PV["6ae6c43d-71c0-42ea-a574-c217e6b56753"].keys.curtail.opt_value`,
                 "1"
               )}
             />
+
             <Input
               name=""
               label="No"
@@ -188,8 +186,7 @@ const PVComponents = () => {
                   .opt_value === "0"
               }
               onChange={handleChange(
-                `  tags.PV["6ae6c43d-71c0-42ea-a574-c217e6b56753"].keys.curtail
-                  .opt_value`,
+                `tags.PV["6ae6c43d-71c0-42ea-a574-c217e6b56753"].keys.curtail.opt_value`,
                 "0"
               )}
             />

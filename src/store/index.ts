@@ -31,6 +31,8 @@ const formSlice = createSlice({
     ) => {
       const newState = cloneDeep(state);
       set(newState, action.payload.path, action.payload.value);
+
+      console.log(action.payload.path, "path");
       return newState;
     },
 

@@ -158,8 +158,7 @@ const BatteryComponents = () => {
                 .daily_cycle_limit.opt_value
             }
             onChange={handleChange(
-              `tags.Battery["10487cf5-16d9-4b78-8109-440b29e1ef78"].keys
-              .daily_cycle_limit.opt_value`,
+              `tags.Battery["10487cf5-16d9-4b78-8109-440b29e1ef78"].keys.daily_cycle_limit.opt_value`,
               "1"
             )}
             checked={
@@ -176,8 +175,7 @@ const BatteryComponents = () => {
                 .daily_cycle_limit.opt_value
             }
             onChange={handleChange(
-              `tags.Battery["10487cf5-16d9-4b78-8109-440b29e1ef78"].keys
-              .daily_cycle_limit.opt_value`,
+              `tags.Battery["10487cf5-16d9-4b78-8109-440b29e1ef78"].keys.daily_cycle_limit.opt_value`,
               "0"
             )}
             checked={
@@ -199,8 +197,7 @@ const BatteryComponents = () => {
                 .incl_cycle_degrade.opt_value
             }
             onChange={handleChange(
-              `tags.Battery["10487cf5-16d9-4b78-8109-440b29e1ef78"].keys
-              .incl_cycle_degrade.opt_value`,
+              `tags.Battery["10487cf5-16d9-4b78-8109-440b29e1ef78"].keys.incl_cycle_degrade.opt_value`,
               "1"
             )}
             checked={
@@ -241,8 +238,7 @@ const BatteryComponents = () => {
                 .opt_value
             }
             onChange={handleChange(
-              `tags.Battery["10487cf5-16d9-4b78-8109-440b29e1ef78"].keys
-              .hp.opt_value`,
+              `tags.Battery["10487cf5-16d9-4b78-8109-440b29e1ef78"].keys.hp.opt_value`,
               "1"
             )}
             checked={
@@ -259,8 +255,7 @@ const BatteryComponents = () => {
                 .opt_value
             }
             onChange={handleChange(
-              `tags.Battery["10487cf5-16d9-4b78-8109-440b29e1ef78"].keys
-              .hp.opt_value`,
+              `tags.Battery["10487cf5-16d9-4b78-8109-440b29e1ef78"].keys.hp.opt_value`,
               "0"
             )}
             checked={
