@@ -56,8 +56,13 @@ const PVComponents = () => {
           <div className="space-y-5">
             <h2 className="">Sizing</h2>
 
-            <Input type="radio" name="" label="Have DER-VET Size the solar" />
-            <Input type="radio" name="" label="Known Size" />
+            <Input
+              type="radio"
+              name=""
+              label="Have DER-VET Size the solar"
+              checked={false}
+            />
+            <Input type="radio" name="" label="Known Size" checked />
           </div>
 
           <Input
@@ -370,6 +375,12 @@ const PVComponents = () => {
 
           <SelectInput
             options={[{ label: "User Defined", value: "0" }]}
+            value={{
+              label: "User Defined",
+              value:
+                tags.PV["6ae6c43d-71c0-42ea-a574-c217e6b56753"].keys
+                  .salvage_value.opt_value,
+            }}
             label="Salvage Value"
           />
 
@@ -422,7 +433,7 @@ const PVComponents = () => {
 
           <div className="flex justify-between w-full">
             <Button
-              onClick={() => navigate("/?step=3")}
+              onClick={() => navigate("/?step=4")}
               type="button"
               size={"sm"}
             >

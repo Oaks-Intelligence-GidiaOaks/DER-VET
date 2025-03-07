@@ -1,0 +1,72 @@
+{
+  "Reliability": {
+    "": {
+      "active": "yes",
+      "keys": {
+        "max_outage_duration": {
+          "opt_value": "24",
+          "sensitivity": {
+            "active": "no",
+            "coupled": "None",
+            "value": "nan"
+          },
+          "type": "int"
+        },
+        "n-2": {
+          "opt_value": "0",
+          "sensitivity": {
+            "active": "no",
+            "coupled": "None",
+            "value": "nan"
+          },
+          "type": "bool"
+        },
+        "post_facto_initial_soc": {
+          "opt_value": "100",
+          "sensitivity": {
+            "active": "no",
+            "coupled": "None",
+            "value": "nan"
+          },
+          "type": "float"
+        },
+        "post_facto_only": {
+          "opt_value": "1",
+          "sensitivity": {
+            "active": "no",
+            "coupled": "None",
+            "value": "nan"
+          },
+          "type": "bool"
+        },
+        "target": {
+          "opt_value": "1",
+          "sensitivity": {
+            "active": "no",
+            "coupled": "None",
+            "value": "nan"
+          },
+          "type": "float"
+        },
+        "load_shed_percentage": {
+          "opt_value": "0",
+          "sensitivity": {
+            "active": "no",
+            "coupled": "None",
+            "value": "nan"
+          },
+          "type": "bool"
+        },
+        "load_shed_perc_filename": {
+          "opt_value": "/Users/chukwukamonyei/Downloads/DER-VET_20250303182710/inputs/load_shed_percentage.csv",
+          "sensitivity": {
+            "active": "no",
+            "coupled": "None",
+            "value": "nan"
+          },
+          "type": "string"
+        }
+      }
+    }
+  }
+}

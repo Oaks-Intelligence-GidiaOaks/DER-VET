@@ -11,6 +11,7 @@ import { RootObject } from "./output.interface";
 import inputJson from "./inputs.json";
 import set from "lodash/set";
 import cloneDeep from "lodash/cloneDeep";
+import { IDer, IDerState } from "./der.interface";
 
 const persistConfig = {
   key: "root",
@@ -37,8 +38,34 @@ const formSlice = createSlice({
   },
 });
 
+const derinitialState: IDerState = {
+  data: [],
+};
+
+const derSlice = createSlice({
+  name: "der",
+  initialState: derinitialState,
+  reducers: {
+    updateDer: (state, action: PayloadAction<IDer>) => {
+      state.data = state.data.some((item) => item.text === action.payload.text)
+        ? state.data
+        : [...state.data, action.payload];
+    },
+    removeDer: (state, action: PayloadAction<IDer>) => {
+      const index = state.data.findIndex(
+        (item) => item.name === action.payload.name
+      );
+
+      if (index !== -1) {
+        state.data = state.data.filter((_, i) => i !== index);
+      }
+    },
+  },
+});
+
 const rootReducer = combineReducers({
   form: formSlice.reducer,
+  der: derSlice.reducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
@@ -49,6 +76,7 @@ const store = configureStore({
 
 // Slice actions
 export const { updateField } = formSlice.actions;
+export const { updateDer, removeDer } = derSlice.actions;
 
 export const persistor = persistStore(store);
 export type RootState = ReturnType<typeof store.getState>;

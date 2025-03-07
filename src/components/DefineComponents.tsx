@@ -1,37 +1,54 @@
 import { Link } from "react-router-dom";
 import { Button } from "./ui/Button";
+import { useSelector } from "react-redux";
+import { RootState } from "@/store";
 import { EComponentName } from "@/pages/DynamicComponent";
 
 const DefineComponents = () => {
-  // coming from state
-  const technologies = ["pv", "battery"];
-  const services = ["Site Information", "Reliability"];
+  const { data } = useSelector((state: RootState) => state.der);
+
+  const services = [
+    {
+      name: EComponentName.siteInformation,
+      text: "Site Information",
+    },
+    {
+      name: EComponentName.reliability,
+      text: "Reliability",
+    },
+  ];
+
   const Financial = [
-    "Miscellaneous Inputs",
-    "External Incentives",
-    "Retail Tariff",
+    {
+      name: EComponentName.miscellaneous,
+      text: "Miscellaneous Inputs",
+    },
+    {
+      name: EComponentName.retailTariff,
+      text: "Retail Tariff",
+    },
   ];
 
   const PlainCard = (props: { text: string }) => (
-    <div
-      className="w-[300px] p-4 rounded cursor-pointer hover:bg-gray-600 hover:text-white text-white
-    capitalise  bg-red-400"
-    >
+    <div className="w-[300px] p-4 rounded my-3 cursor-pointer hover:bg-gray-600 hover:text-white text-white capitalise  bg-red-400">
       {props.text}
     </div>
   );
 
   return (
     <div className="space-y-6">
-      <h2 className="">DefineComponents</h2>
+      <h2 className="text-2xl font-semibold">Define Components</h2>
 
       <div className="">
         <h2 className="">Technologies</h2>
 
         <div className="space-y-3">
-          {Array.from(technologies, (item) => (
-            <Link key={item} to={`/components/${EComponentName.battery}`}>
-              <PlainCard text={item} />
+          {Array.from(data, (item) => (
+            <Link
+              key={item.name}
+              to={`/components/${item.name.toLocaleLowerCase()}`}
+            >
+              <PlainCard text={item.name} />
             </Link>
           ))}
         </div>
@@ -42,7 +59,9 @@ const DefineComponents = () => {
 
         <div className="space-y-3">
           {Array.from(services, (item) => (
-            <PlainCard text={item} key={item} />
+            <Link key={item.name} to={`/components/${item.name}`}>
+              <PlainCard {...item} key={item.name} />
+            </Link>
           ))}
         </div>
       </div>
@@ -52,7 +71,9 @@ const DefineComponents = () => {
 
         <div className="space-y-3">
           {Array.from(Financial, (item, i) => (
-            <PlainCard text={item} key={i} />
+            <Link key={item.name} to={`/components/${item.name}`}>
+              <PlainCard {...item} key={i} />
+            </Link>
           ))}
         </div>
       </div>
