@@ -265,3 +265,8 @@ interface Backup {
 interface _ {
   active: string;
 }
+
+export interface IFile {
+  filename: string;
+  url: string;
+}
