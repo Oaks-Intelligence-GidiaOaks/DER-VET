@@ -9,8 +9,8 @@ import { useParams } from "react-router-dom";
 export enum EComponentName {
   battery = "battery",
   pv = "pv",
-  retailTariff = "retailTariff",
-  services = "services",
+  retailTariff = "retailtariff",
+  siteInformation = "siteinformation",
   miscellaneous = "miscellaneous",
   reliability = "reliability",
 }
@@ -22,7 +22,7 @@ const DynamicComponent = () => {
     [EComponentName.battery]: <BatteryComponents />,
     [EComponentName.pv]: <PVComponents />,
     [EComponentName.retailTariff]: <RetailTariffComponents />,
-    [EComponentName.services]: <ServicesComponents />,
+    [EComponentName.siteInformation]: <ServicesComponents />,
     [EComponentName.miscellaneous]: <MiscellaneousComponents />,
     [EComponentName.reliability]: <ReliabilityComponents />,
   };
