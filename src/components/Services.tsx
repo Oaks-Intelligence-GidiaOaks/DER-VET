@@ -63,8 +63,15 @@ const Services = () => {
           type="radio"
           name=""
           label="Retail, Tariff, PPA or other fixed contract "
+          checked
         />
-        <Input type="radio" name="" label="Whoesale energy market production" />
+
+        <Input
+          type="radio"
+          name=""
+          label="Whoesale energy market production"
+          checked={false}
+        />
       </div>
 
       <div className="space-y-5">

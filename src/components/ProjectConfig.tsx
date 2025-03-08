@@ -44,7 +44,7 @@ const ProjectConfig = () => {
           name={`tags.Scenario[""].keys.start_year.opt_value`}
           label="Start Year"
           value={tags.Scenario[""]?.keys.start_year.opt_value}
-          onChange={handleChange('tags.Scenario."".keys.start_year.opt_value')}
+          onChange={handleChange('tags.Scenario[""].keys.start_year.opt_value')}
         />
 
         <div className="space-y-5">
@@ -111,7 +111,7 @@ const ProjectConfig = () => {
             name=""
             value={tags.Scenario[""].keys.opt_years.opt_value}
             onChange={handleChange(
-              'tags.Scenario[""].keys.opt_years.opt_value}'
+              'tags.Scenario[""].keys.opt_years.opt_value'
             )}
           />
 

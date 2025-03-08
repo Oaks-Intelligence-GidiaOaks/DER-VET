@@ -12,15 +12,12 @@ const BatteryComponents = () => {
   const dispatch = useDispatch();
 
   const handleChange =
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-
-
-      (path: string, customValue?: any) =>
-      (event?: React.ChangeEvent<HTMLInputElement>) => {
-        const value =
-          customValue !== undefined ? customValue : event?.target.value;
-        dispatch(updateField({ path, value }));
-      };
+    (path: string, customValue?: any) =>
+    (event?: React.ChangeEvent<HTMLInputElement>) => {
+      const value =
+        customValue !== undefined ? customValue : event?.target.value;
+      dispatch(updateField({ path, value }));
+    };
 
   return (
     <div className=" min-h-[100vh] w-full bg-gray-100 p-5 grid place-items-center">
@@ -74,15 +71,15 @@ const BatteryComponents = () => {
         <div className="space-y-5">
           <h2 className="">Include limits on capacity sizing?</h2>
 
-          <Input type="radio" name="" label="Yes" />
-          <Input type="radio" name="" label="No" />
+          <Input type="radio" name="" label="Yes" checked={false} />
+          <Input type="radio" name="" label="No" checked={true} />
         </div>
 
         <div className="space-y-5">
           <h2 className="">Set the max duration of the size?</h2>
 
-          <Input type="radio" name="" label="Yes" />
-          <Input type="radio" name="" label="No" />
+          <Input type="radio" name="" label="Yes" checked={false} />
+          <Input type="radio" name="" label="No" checked={true} />
         </div>
 
         <Input
@@ -456,10 +453,18 @@ const BatteryComponents = () => {
         />
 
         <SelectInput
-          options={[{ label: "3", value: "3" }]}
+          options={[
+            { label: "3", value: "3" },
+            { label: "5", value: "5" },
+            { label: "7", value: "7" },
+            { label: "10", value: "10" },
+            { label: "15", value: "15" },
+          ]}
           label="MACRS Term (years)"
           value={{
-            label: "3",
+            label:
+              tags.Battery["10487cf5-16d9-4b78-8109-440b29e1ef78"].keys
+                .macrs_term.opt_value,
             value:
               tags.Battery["10487cf5-16d9-4b78-8109-440b29e1ef78"].keys
                 .macrs_term.opt_value,
